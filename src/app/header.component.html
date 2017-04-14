@@ -1,0 +1,14 @@
+<header>
+  <div class="header-row">
+    <div class="header__company-logo">
+      <img src="../assets/images/sln-logo__white.svg" alt="Student Life Network">
+    </div>
+    <div class="header__title">
+      Launch Pad
+    </div>
+    <div class="header__actions">
+      <a (click)="addNew()" class="btn btn__flat btn__transparent btn__white-border"><i class="material-icons">event_available</i></a>
+    </div>
+  </div>
+</header>
+<app-launch-new *ngIf="newForm" (cleared)="clear()"></app-launch-new>

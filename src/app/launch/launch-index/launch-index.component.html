@@ -1,0 +1,15 @@
+<section id="list">
+  <div class="content">
+    <div class="launch-table">
+      <div class="launch-row launch-row__header">
+        <div class="launch-cell launch-cell__division">Division</div>
+        <div class="launch-cell launch-cell__project">Project</div>
+        <div class="launch-cell launch-cell__clientApproval">Client Approval</div>
+        <div class="launch-cell launch-cell__launchDate">Launch Week</div>
+        <div class="launch-cell launch-cell__status">Status</div>
+        <div class="launch-cell launch-cell__daysLeft">Days Left</div>
+      </div>
+      <app-launch-index-item *ngFor="let launch of launches; let i = index;"></app-launch-index-item>
+    </div>
+  </div>
+</section>
