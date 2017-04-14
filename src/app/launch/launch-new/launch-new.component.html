@@ -1,26 +1,26 @@
 <div class="modal-wrapper">
   <div class="modal">
-    <form class="modal-card" (ngSubmit)="addNewLaunch(f.value)" #f="ngForm">
+    <form [formGroup]="launchForm" (ngSubmit)="addNewLaunch()" class="modal-card" >
       <div class="modal-content">
         <div class="form-row">
           <div class="fake-label">Division</div>
           <div class="form-row radio-block-row flex-wrapper"><!--
-          --><div class="flex-grow"><label for="division-sln" class="radio-block">SLN<input type="radio" class="radio" name="division" id="division-sln" value="SLN" [ngModel]="launch.division"></label></div><!--
-          --><div class="flex-grow"><label for="division-pln" class="radio-block">PLN<input type="radio" class="radio" name="division" id="division-pln" value="PLN" [ngModel]="launch.division"></label></div><!--
-          --><div class="flex-grow"><label for="division-other" class="radio-block">Other<input type="radio" class="radio" name="division" id="division-other" value="Other" [ngModel]="launch.division"></label></div><!--
+          --><div class="flex-grow"><label for="division-sln" class="radio-block">SLN<input type="radio" class="radio" name="division" id="division-sln" value="SLN" formControlName="division"></label></div><!--
+          --><div class="flex-grow"><label for="division-pln" class="radio-block">PLN<input type="radio" class="radio" name="division" id="division-pln" value="PLN" formControlName="division"></label></div><!--
+          --><div class="flex-grow"><label for="division-other" class="radio-block">Other<input type="radio" class="radio" name="division" id="division-other" value="Other" formControlName="division"></label></div><!--
         --></div>
         </div>
         <div class="form-row">
           <label for="project" class="input-field">Project</label>
-          <input type="text" class="input-field" id="project" name="project" [ngModel]="launch.project">
+          <input type="text" class="input-field" id="project" formControlName="project">
         </div>
         <div class="form-row">
           <label for="clientApproval" class="input-field">Client Approval</label>
-          <input id="clientApproval" [ngModel]="launch.clientApproval" name="clientApproval">
+          <material-datepicker id="clientApproval" [(date)]="date"></material-datepicker>
         </div>
         <div class="form-row">
           <label for="launchDate" class="input-field">Launch Date</label>
-          <input id="launchDate" [ngModel]="launch.launchDate" name="launchDate">
+          <input id="launchDate" formControlName="launchDate">
         </div>
       </div>
       <div class="modal-actions">
