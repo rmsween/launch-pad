@@ -9,7 +9,7 @@
         <div class="launch-cell launch-cell__status">Status</div>
         <div class="launch-cell launch-cell__daysLeft">Days Left</div>
       </div>
-      <app-launch-index-item *ngFor="let launch of launches; let i = index;"></app-launch-index-item>
+      <app-launch-index-item *ngFor="let launch of launches; let i = index;" [launch]="launch[0]"></app-launch-index-item>
     </div>
   </div>
 </section>

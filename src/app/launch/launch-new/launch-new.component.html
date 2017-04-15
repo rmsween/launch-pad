@@ -16,11 +16,13 @@
         </div>
         <div class="form-row">
           <label for="clientApproval" class="input-field">Client Approval</label>
-          <input id="clientApproval" [ngModel]="launch.clientApproval" name="clientApproval">
+          <material-datepicker [(date)]="date1" (onSelect)="onSelect($event, 'clientApproval')"></material-datepicker>
+          <input id="clientApproval" name="clientApproval" [(ngModel)]="clientApproval" hidden>
         </div>
         <div class="form-row">
           <label for="launchDate" class="input-field">Launch Date</label>
-          <input id="launchDate" [ngModel]="launch.launchDate" name="launchDate">
+          <material-datepicker [(date)]="date2" (onSelect)="onSelect($event, 'launchDate')"></material-datepicker>
+          <input id="launchDate" [(ngModel)]="launchDate" name="launchDate" hidden>
         </div>
       </div>
       <div class="modal-actions">

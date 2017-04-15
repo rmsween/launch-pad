@@ -24,9 +24,11 @@ export class LaunchIndexComponent implements OnInit {
         data => {
           const objArray = [];
           for (let key in data) {
-            objArray.push(key.toString());
+            var item = data[key];
+            objArray.push([item, key.toString()]);
           }
           this.launches = objArray;
+          console.log(this.launches);
         }
       );
   }

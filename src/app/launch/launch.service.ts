@@ -25,4 +25,9 @@ export class LaunchService {
     return this.http.get(this.apiUrl).map((response: Response) => response.json());
   }
 
+  saveLaunch(launch: Launch) {
+    return this.http.post(this.apiUrl, JSON.stringify(launch), {headers: this.headers})
+      .map((data: Response) => data.json());
+  }
+
 }
