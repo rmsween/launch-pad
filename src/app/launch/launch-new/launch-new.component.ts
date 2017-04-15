@@ -10,10 +10,10 @@ import { LaunchService } from '../launch.service';
   styleUrls: ['./launch-new.component.css']
 })
 export class LaunchNewComponent implements OnInit, OnChanges {
-  @Input() launch = Launch;
+  @Input() launch: Launch;
   @Output() cleared = new EventEmitter();
-  clientApproval = '';
-  launchDate = '';
+  clientApproval: Date;
+  launchDate: Date;
   newLaunch: Launch;
 
   constructor(public launchService: LaunchService) { }
@@ -28,16 +28,7 @@ export class LaunchNewComponent implements OnInit, OnChanges {
     console.log(changes)
   }
   onSelect(date: Date, id) {
-    const refDate = date;
-    const year = refDate.getFullYear();
-    const month = refDate.getMonth() + 1;
-    const day = refDate.getDate();
-    const formattedDate = year + '-' + (month < 9 ? '0' + month : month) + '-' + day;
-    if (id === 'clientApproval') {
-        this.clientApproval = formattedDate;
-    } else {
-        this.launchDate = formattedDate;
-    }
+    id === 'clientApproval' ? this.clientApproval = date : this.launchDate = date;
   }
 
   addNewLaunch(value) {
@@ -46,7 +37,7 @@ export class LaunchNewComponent implements OnInit, OnChanges {
       (data: Response) => {
         console.log('Launch saved.');
         this.newLaunch = null;
-        this.cleared.emit(null);
+        this.closeModal();
       }
     );
   }
