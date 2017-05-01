@@ -15,6 +15,8 @@ import { LaunchShowComponent } from './launch/launch-show/launch-show.component'
 import { FooterComponent } from './footer.component';
 import { LaunchIndexItemComponent } from './launch/launch-index/launch-index-item.component';
 import { LaunchService } from './launch/launch.service';
+import { WeekPipe } from './launch/week.pipe';
+import { ConflictCheckComponent } from './launch/conflict-check/conflict-check.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { LaunchService } from './launch/launch.service';
     LaunchEditComponent,
     LaunchShowComponent,
     FooterComponent,
-    LaunchIndexItemComponent
+    LaunchIndexItemComponent,
+    WeekPipe,
+    ConflictCheckComponent
   ],
   imports: [
     BrowserModule,

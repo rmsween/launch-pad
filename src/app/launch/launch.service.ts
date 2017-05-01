@@ -10,7 +10,7 @@ import { Launch } from './launch';
 export class LaunchService {
   public launches: Launch[] = [];
 
-  private apiUrl = 'https://launch-pad-4cb59.firebaseio.com/launches.json';
+  private apiUrl = 'https://launch-pad-4cb59.firebaseio.com/launches.json?orderBy="launchDate"&startAt=1';
   private headers = new Headers({'Content-Type': 'application/json'});
 
   private handleError(error: any): Promise<any> {

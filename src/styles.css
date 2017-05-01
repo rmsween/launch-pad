@@ -182,7 +182,7 @@ section .content {
   width: 100%;
   max-width: 1006px;
   height: auto;
-  margin: 48px auto;
+  margin: 0 auto;
 }
 .launch-table {
   background-color: #fff;
@@ -198,10 +198,13 @@ section .content {
   line-height: 64px;
   margin: 0 24px;
 }
-.launch-row:nth-of-type(even) {
+app-launch-index-item:nth-of-type(even) .launch-row {
   background-color: #F5F8FA;
   border-top: 1px solid #E1E8ED;
   border-bottom: 1px solid #E1E8ED;
+}
+app-launch-index-item .launch-row.conflicted {
+  background-color: rgba(255,0,0,0.1);
 }
 .launch-row__header {
   background-color: #54b1fb;
@@ -238,11 +241,15 @@ section .content {
 }
 .launch-cell__status {
   width: 13%;
+  color: #3BD573;
 }
 .launch-cell__daysLeft {
   width: 9%;
   color: #66757F;
   font-weight: bold;
+}
+.conflicted .launch-cell {
+  color: #FF1C1C;
 }
 .modal-wrapper {
   width: 100vw;

@@ -5,6 +5,7 @@ export class Launch {
     public project: string,
     public clientApproval: Date,
     public launchDate: Date,
-    public visible: boolean
+    public visible: boolean,
+    public conflict: boolean,
   ) {}
 }

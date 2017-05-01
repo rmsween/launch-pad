@@ -32,12 +32,13 @@ export class LaunchNewComponent implements OnInit, OnChanges {
   }
 
   addNewLaunch(value) {
-    this.newLaunch = new Launch(1, value.division, value.project, value.clientApproval, value.launchDate, true);
+    this.newLaunch = new Launch(1, value.division, value.project, value.clientApproval, value.launchDate, true, false);
     this.launchService.saveLaunch(this.newLaunch).subscribe(
       (data: Response) => {
         console.log('Launch saved.');
         this.newLaunch = null;
         this.closeModal();
+        this.cleared.emit(null);
       }
     );
   }

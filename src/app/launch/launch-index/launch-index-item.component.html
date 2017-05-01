@@ -1,8 +1,8 @@
-<div class="launch-row" *ngIf="launch">
+<div class="launch-row" *ngIf="launch" [class.conflicted]="launch.conflict">
   <div class="launch-cell launch-cell__division">{{launch.division}}</div>
   <div class="launch-cell launch-cell__project">{{launch.project}}</div>
   <div class="launch-cell launch-cell__clientApproval">{{launch.clientApproval ? (launch.clientApproval | date) : 'Not Required'}}</div>
   <div class="launch-cell launch-cell__launchDate">{{launch.launchDate | week: 'start' | date }} - {{launch.launchDate | week: 'end' | date}}</div>
-  <div class="launch-cell launch-cell__status">No Conflicts</div>
+  <div class="launch-cell launch-cell__status">{{launch.conflict ? 'Conflict' : 'No Conflict'}}</div>
   <div class="launch-cell launch-cell__daysLeft">{{daysLeft}}</div>
 </div>
